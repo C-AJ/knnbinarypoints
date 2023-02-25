@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------
-# AUTHOR: your name
-# FILENAME: title of the source file
+# AUTHOR: Austin Celestino
+# FILENAME: knn.py
 # SPECIFICATION: description of the program
 # FOR: CS 4210- Assignment #2
 # TIME SPENT: how long it took you to complete the assignment
