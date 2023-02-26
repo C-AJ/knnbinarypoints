@@ -35,7 +35,13 @@ with open('binary_points.csv', 'r') as csvfile:
 
 #loop your data to allow each instance to be your test set
 for counter in range(len(X)):
+    xNew = []
+    yNew = []
     total += 1
+    for i in range(len(X)):
+        if i != counter:
+            xNew.append(X[i])
+            yNew.append(Y[i])
     #add the training features to the 2D array X removing the instance that will be used for testing in this iteration. For instance, X = [[1, 3], [2, 1,], ...]]. Convert each feature value to
     # float to avoid warning messages
     #--> add your Python code here
@@ -52,13 +58,12 @@ for counter in range(len(X)):
 
     #fitting the knn to the data
     clf = KNeighborsClassifier(n_neighbors=1, p=2)
-    clf = clf.fit(X, Y)
+    clf = clf.fit(xNew, yNew)
 
     #use your test sample in this iteration to make the class prediction. For instance:
     #class_predicted = clf.predict([[1, 2]])[0]
     #--> add your Python code here
     class_predicted = clf.predict([X[counter]])[0]
-    print([X[counter]])
 
     #compare the prediction with the true label of the test instance to start calculating the error rate.
     #--> add your Python code here
